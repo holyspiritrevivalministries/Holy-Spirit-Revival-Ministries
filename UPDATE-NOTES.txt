@@ -1,0 +1,11 @@
+Updated Holy Spirit Revival Ministries website
+
+Open index.html to preview, or upload all contents of this folder to the website host together.
+
+Changes: orange/white ministry theme with pink accents; Revival FC opening photo; larger gently shaking Android download button; donation section using the same Mobile Money number as the supplied app, 0788962748.
+
+APK download: Holy-Spirit-Revival-Ministries-Updated.apk (3,741,496 bytes). Keep this file beside index.html when uploading. Browser download tested over local HTTP and matched the supplied APK byte for byte. Android installation itself was not tested.
+
+Donation button opens giving instructions; it does not process payments. Existing programs, photos, videos, contact information and image lightbox retained.
+
+The original project folder was preserved. This folder is the updated copy. No live website was published.

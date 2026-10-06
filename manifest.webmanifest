@@ -1,0 +1,12 @@
+{
+  "name": "Holy Spirit Revival Ministries",
+  "short_name": "HSRM",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff6a00",
+  "description": "Holy Spirit Revival Ministries — Revival, Restoration, Transformation.",
+  "icons": [
+    {"src":"assets/ministry-logo.png","sizes":"1254x1254","type":"image/png","purpose":"any maskable"}
+  ]
+}

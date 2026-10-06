@@ -1,0 +1,701 @@
+:root {
+  --bg: #ffffff;
+  --panel: #fff5ed;
+  --accent: #ff6a00;
+  --accent-dark: #b84700;
+  --accent-soft: rgba(255, 138, 0, 0.18);
+  --sun-1: #ffd86b;
+  --sun-2: #ffb347;
+  --sun-3: #ff6a00;
+  --text: #351a10;
+  --muted: #684a3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, rgba(125, 168, 232, 0.24), transparent 30%), var(--bg);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(125, 168, 232, 0.16), transparent 55%);
+  pointer-events: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(14px);
+  background: rgba(4, 17, 45, 0.84);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo-icon {
+  width: 72px;
+  height: 72px;
+  position: relative;
+  border-radius: 12px;
+  background: radial-gradient(circle at top, var(--sun-2), var(--accent-dark));
+  box-shadow: 0 18px 45px rgba(255, 138, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.flame {
+  /* decorative flame no longer used when using image logo */
+  display: none;
+}
+
+.cross {
+  position: absolute;
+  left: 50%;
+  top: 22%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 32px;
+  background: #f8fbff;
+}
+
+.cross::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 12px;
+  width: 38px;
+  height: 12px;
+  background: #f8fbff;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  color: #f7f5ff;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.28rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.main-nav a:hover {
+  color: #ffffff;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  padding: 72px 32px 40px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('revival-fc.jpeg');
+  background-size: cover;
+  background-position: top center;
+  filter: brightness(0.95) saturate(1.05);
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 38%;
+  background: linear-gradient(180deg, var(--sun-1), var(--sun-2) 45%, rgba(0,0,0,0) 100%);
+  opacity: 0.95;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(ellipse at top center, rgba(255,230,180,0.22), transparent 40%), repeating-linear-gradient(-20deg, rgba(255,230,180,0.06) 0px, rgba(255,230,180,0.06) 2px, transparent 2px, transparent 30px);
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(6px);
+}
+
+.hero-copy,
+.hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-copy {
+  max-width: 640px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+  padding: 36px;
+  border-radius: 18px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.32);
+  color: var(--text);
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: #dbe9ff;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h2 {
+  margin: 22px 0 20px;
+  font-size: clamp(2rem, 3vw, 4rem);
+  line-height: 1.02;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.hero-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.app-download-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.app-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fff7df, #ffd166);
+  color: #3b1300;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 0 12px 30px rgba(255, 189, 89, 0.52);
+  border: 2px solid rgba(59, 19, 0, 0.2);
+  animation: app-shake 5s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-download-btn:hover,
+.app-download-btn:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 16px 38px rgba(255, 189, 89, 0.68);
+}
+
+.download-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(59, 19, 0, 0.1);
+  font-size: 1.2rem;
+}
+
+.app-download-wrap small {
+  color: #fff3dc;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+@keyframes app-shake {
+  0%, 72%, 100% { transform: translateX(0) rotate(0); }
+  76%, 84% { transform: translateX(-2px) rotate(-0.6deg); }
+  80%, 88% { transform: translateX(2px) rotate(0.6deg); }
+  92% { transform: translateX(0) rotate(0); }
+}
+
+.info-card {
+  flex: 1 1 180px;
+  min-width: 180px;
+  padding: 22px 20px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.info-card span {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.info-card strong {
+  font-size: 1.05rem;
+}
+
+.info-card.secondary {
+  background: var(--accent-soft);
+  border-color: rgba(125, 168, 232, 0.26);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.spirit-card {
+  position: relative;
+  padding: 34px 28px;
+  max-width: 500px;
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(18px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.25);
+}
+
+.spirit-card p {
+  margin: 0 0 18px;
+  font-size: 1.12rem;
+  line-height: 1.8;
+}
+
+.spirit-card span {
+  display: block;
+  color: #dbe9ff;
+  font-weight: 700;
+}
+
+.section {
+  padding: 64px 32px;
+}
+
+.section-header span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #dbe9ff;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(2rem, 2.2vw, 3.2rem);
+}
+
+.programs-section {
+  background: linear-gradient(180deg, rgba(17, 45, 99, 0.93), rgba(7, 27, 63, 0.95));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.program-grid article {
+  padding: 28px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.program-grid strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.program-grid span {
+  display: block;
+  color: var(--muted);
+}
+
+.program-grid small {
+  margin-top: 12px;
+  display: block;
+  color: #dbe9ff;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.ministries-section {
+  background: radial-gradient(circle at top left, rgba(125, 168, 232, 0.16), transparent 32%), var(--bg);
+}
+
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.ministry-card {
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.video-card {
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.2);
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.ministry-video-caption {
+  padding: 18px 20px 22px;
+  text-align: center;
+}
+
+.ministry-video-caption h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.ministry-video-caption p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.ministry-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* clickable images */
+.ministry-card img { cursor: pointer; }
+
+/* Lightbox styles */
+#lightbox.lb-hidden { display: none; }
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lb-content {
+  max-width: 92vw;
+  max-height: 84vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lb-content img {
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform 200ms ease;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.lb-toolbar {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  gap: 8px;
+  z-index: 10000;
+}
+.lb-toolbar button,
+.lb-toolbar a {
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.lb-toolbar button:hover, .lb-toolbar a:hover { background: rgba(255,255,255,0.1); }
+
+@media (max-width: 620px) {
+  .lb-toolbar { top: 8px; right: 8px; gap: 6px; }
+  .lb-toolbar button, .lb-toolbar a { padding: 6px 8px; }
+}
+
+.ministry-card-content {
+  padding: 24px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.ministry-card-content h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.ministry-card-content p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-grid a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-grid a:hover {
+  text-decoration: underline;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.about-copy p {
+  max-width: 620px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 24px;
+}
+
+.about-highlight {
+  padding: 32px;
+  border-radius: 28px;
+  background: var(--accent-soft);
+  border: 1px solid rgba(125, 168, 232, 0.24);
+}
+
+.about-highlight p {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+}
+
+.about-highlight strong {
+  font-size: 1.3rem;
+}
+
+.contact-section {
+  background: linear-gradient(180deg, rgba(17, 45, 99, 0.92), rgba(7, 27, 63, 0.9));
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.contact-grid h3 {
+  margin-top: 0;
+}
+
+.contact-grid p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.site-footer {
+  padding: 26px 32px 40px;
+  text-align: center;
+  color: #c5d4f4;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header,
+  .hero,
+  .section,
+  .site-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .main-nav {
+    gap: 14px;
+  }
+  .program-grid,
+  .ministry-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ministry palette: logo orange, white, and restrained pink accents. */
+html { scroll-behavior: smooth; scroll-padding-top: 160px; }
+body { background: #fff; }
+body::before { display: none; }
+.site-header { background: rgba(255,255,255,.96); border-bottom: 3px solid var(--accent); }
+.logo-icon { background: #fff; flex-shrink: 0; }
+.eyebrow, .main-nav a { color: var(--accent-dark); }
+.main-nav a:hover { color: #a92861; }
+.hero { min-height: 760px; }
+.hero-bg { background-position: center 38%; filter: none; }
+.hero::before { inset: 0; height: auto; background: linear-gradient(90deg,rgba(53,26,16,.35),transparent 70%); mix-blend-mode: normal; }
+.hero::after { display: none; }
+.hero-copy { background: transparent; box-shadow: none; }
+.hero-label { color: #a92861; background: #fff0f5; }
+.hero h2 { color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.85); }
+.hero-copy > p, .hero-copy .app-download-wrap small { color: #fff; text-shadow: 0 1px 5px #000, 0 1px 12px #000; }
+.info-card { background: #fff5ed; border-color: #f3d4be; }
+.info-card.secondary { background: #fff0f5; border-color: #f1c3d6; }
+.spirit-card { background: rgba(255,255,255,.95); }
+.spirit-card span, .section-header span { color: #a92861; }
+.programs-section, .contact-section { background: #fff5ed; }
+.ministries-section { background: #fff; }
+.program-grid article, .ministry-card, .video-card { background: #fff; border: 1px solid #f1d7c6; }
+.program-grid strong { color: var(--accent-dark); }
+.program-grid small { color: #a92861; }
+.about-highlight { background: #fff0f5; border-color: #f1c3d6; }
+.site-footer { color: var(--muted); border-top: 2px solid var(--accent); }
+.app-download-btn, .donate-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 20px 30px; min-height: 64px; border-radius: 999px; font: inherit; font-size: 1.05rem; font-weight: 800; letter-spacing: .01em; text-transform: none; text-decoration: none; cursor: pointer; border: 2px solid transparent; }
+.app-download-btn { background: var(--accent-dark); color: #fff; box-shadow: 0 8px 22px rgba(184,71,0,.2); }
+.donate-btn { background: #a92861; color: #fff; box-shadow: 0 8px 22px rgba(169,40,97,.16); }
+.app-download-btn:hover, .app-download-btn:focus-visible { animation: none; box-shadow: 0 12px 28px rgba(184,71,0,.25); }
+.donate-btn:hover { background: #8d2050; }
+a:focus-visible, button:focus-visible { outline: 3px solid #351a10; outline-offset: 4px; }
+.app-download-wrap small { color: var(--muted); letter-spacing: 0; }
+.download-icon { background: rgba(255,255,255,.18); width: 32px; height: 32px; }
+.giving-section { background: #fff; }
+.giving-section > p, .giving-card p { color: var(--muted); line-height: 1.75; }
+.giving-card { margin-top: 24px; padding: 28px; border: 1px solid #f1c3d6; border-radius: 24px; background: #fff0f5; max-width: 760px; }
+.giving-card h3 { margin-top: 0; }
+.giving-number { display: inline-block; color: #351a10; font-size: 1.5rem; }
+.giving-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; }
+.giving-actions a { color: #8d2050; font-weight: 700; }
+.contact-grid a { overflow-wrap: anywhere; }
+.lb-toolbar button, .lb-toolbar a { color: #fff; }
+@media (max-width: 620px) {
+  .site-header { position: relative; }
+  .hero { padding-top: 36px; min-height: auto; }
+  .hero-copy { padding: 24px; }
+  .hero-visual { margin-top: 100px; }
+  .hero-bg { background-position: 60% center; }
+  .app-download-btn, .donate-btn { width: 100%; padding: 18px 16px; font-size: 1rem; }
+  .app-download-wrap { align-items: stretch; }
+  .full-width { grid-column: auto; }
+  .video-grid { grid-template-columns: 1fr; }
+  .brand { gap: 12px; }
+  .eyebrow { letter-spacing: .08em; font-size: .75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .app-download-btn { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+.ministry-video-caption a { color: #a92861; font-weight: 600; text-underline-offset: 3px; }
