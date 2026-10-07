@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Holy Spirit Revival Ministries</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo-icon">
+        <img src="logo.png" alt="Holy Spirit Revival Ministries logo" class="logo-img" />
+      </div>
+      <div>
+        <p class="eyebrow">Holy Spirit Revival Ministries</p>
+        <h1>Cross of Grace</h1>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Weekly Programs</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section about-section">
+      <div class="about-copy">
+        <span>About Us</span>
+        <h2>Cross of Grace</h2>
+        <p>Holy Spirit Revival Ministries is a place of revival, restoration, and transformation. We are committed to helping people encounter God, grow in faith, and walk in victory.</p>
+      </div>
+      <div class="about-highlight">
+        <p>"Not by might nor by power, but by My Spirit, says the Lord Almighty."</p>
+        <strong>Zechariah 4:6</strong>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Revival | Restoration | Transformation</p>
+  </footer>
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="lb-hidden" aria-hidden="true">
+    <div class="lb-toolbar" role="toolbar" aria-label="Image controls">
+      <button id="lb-zoom-in" title="Zoom in">+</button>
+      <button id="lb-zoom-out" title="Zoom out">−</button>
+      <button id="lb-reset" title="Reset zoom">Reset</button>
+      <a id="lb-download" href="#" download title="Download image">Download</a>
+      <button id="lb-close" title="Close">Close</button>
+    </div>
+    <div class="lb-content">
+      <img id="lb-image" src="" alt="" />
+    </div>
+  </div>
+
+  <script src="lightbox.js"></script>
+  <script>
+    document.getElementById('copy-donation-number')?.addEventListener('click', async () => {
+      const status = document.getElementById('giving-status');
+      try {
+        await navigator.clipboard.writeText('0788962748');
+        status.textContent = '0788962748 copied. Confirm the recipient with the ministry before sending.';
+      } catch {
+        status.textContent = 'Please select and copy the number 0788962748 above.';
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealItems = document.querySelectorAll('.reveal, .ministry-card, .program-grid article, .contact-grid > div, .section-header');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -20px 0px'
+      });
+
+      revealItems.forEach((item) => {
+        observer.observe(item);
+      });
+    });
+  </script>
+</body>
+</html>
+
