@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Holy Spirit Revival Ministries</title>
+  <title>Donate | Holy Spirit Revival Ministries</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,47 +19,25 @@
     </div>
 
     <nav class="main-nav" aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
+      <a href="index.html">Home</a>
       <a href="programs.html">Weekly Programs</a>
       <a href="ministries.html">Ministries</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="donate.html">Donate</a>
+      <a href="donate.html" aria-current="page">Donate</a>
     </nav>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <span class="hero-label">You Are Invited</span>
-        <h2>Reviving Lives Through the Power of the Holy Spirit</h2>
-        <p>Join us for worship, prayer, healing, and spiritual renewal at Holy Spirit Revival Ministries.</p>
-        <div class="hero-info">
-          <div class="info-card">
-            <span>Sunday Service</span>
-            <strong>9AM to 12PM</strong>
-          </div>
-          <div class="info-card secondary">
-            <span>Midweek</span>
-            <strong>Wed &amp; Fri 3PM to 5PM</strong>
-          </div>
-        </div>
-
-        <div class="app-download-wrap">
-          <a class="app-download-btn" href="Holy-Spirit-Revival-Ministries-Updated.apk" download="Holy-Spirit-Revival-Ministries-App.apk" aria-label="Download Our App">
-            <span class="download-icon" aria-hidden="true">↓</span>
-            Download Our App
-          </a>
-          <a class="donate-btn" href="donate.html"><span class="download-icon" aria-hidden="true">♡</span>Donate to the Ministry</a>
-          <small>Download the Android app · 3.6 MB</small>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="spirit-card">
-          <p>"If anyone desires to come after Me, let him deny himself and take up his cross and follow Me."</p>
-          <span>Matthew 16:24</span>
-        </div>
+    <section id="giving" class="section giving-section">
+      <div class="section-header"><span>Give with a grateful heart</span><h2>Donate to the Ministry</h2></div>
+      <p>Support the ministry with your tithe, offering, thanksgiving, or building fund contribution.</p>
+      <div class="giving-card">
+        <h3>Give through Mobile Money</h3>
+        <p>Send your contribution to <strong class="giving-number">0788962748</strong>.</p>
+        <p>Please confirm the recipient with the ministry before sending.</p>
+        <div class="giving-actions"><button class="donate-btn" id="copy-donation-number" type="button">Copy Mobile Money Number</button><a href="tel:+256788962748">Call the Ministry</a></div>
+        <p id="giving-status" role="status" aria-live="polite"></p>
       </div>
     </section>
   </main>

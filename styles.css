@@ -699,3 +699,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #351a10; outline-offs
 }
 
 .ministry-video-caption a { color: #a92861; font-weight: 600; text-underline-offset: 3px; }
+
+body { min-height: 100vh; display: flex; flex-direction: column; }
+main { flex: 1; }
+.main-nav a[aria-current="page"] { color: #a92861; text-decoration: underline; text-underline-offset: 7px; }
